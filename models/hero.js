@@ -1,5 +1,3 @@
-// A hero should be able to view tasks that are marked as completed or incomplete.
-
 const Hero = function(name, health, favourite_food) {
   this.name = name;
   this.health = health;
