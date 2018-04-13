@@ -24,7 +24,7 @@ describe('Task tests', function() {
     assert.strictEqual(taskA.completed, false);
   });
 
-  if('Can set task as complete', function() {
+  it('Can set task as complete', function() {
     taskA.setComplete();
     assert.strictEqual(taskA.completed, true);
   });
