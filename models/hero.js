@@ -11,10 +11,17 @@ Hero.prototype.speak = function () {
 
 Hero.prototype.eat = function (food) {
   let food_value = food.replenishment_value;
-  if(food.name === this.favourite_food) {
+
+  if(food.name === this.favourite_food && food.isPoisonous === false) {
     food_value *= 1.5;
+    this.health += food_value;
   }
-  this.health += food_value;
+  else if(food.isPoisonous) {
+    this.health -= food_value;
+  }
+  else {
+    this.health += food_value;
+  }
 };
 
 Hero.prototype.addTask = function (task) {

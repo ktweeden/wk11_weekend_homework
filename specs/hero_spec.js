@@ -48,15 +48,21 @@ describe('Hero tests', function() {
     assert.strictEqual(hero.health, 155);
   });
 
-  it('Can replenish health more by eating  favouritefood', function() {
+  it('Can replenish health more by eating favouritefood', function() {
     hero.eat(blueberry_pie);
     assert.strictEqual(hero.health, 153);
+  });
+
+  it('Can lose health by eating poisonous food', function() {
+    cheese.makePoisonous();
+    hero.eat(cheese);
+    assert.strictEqual(hero.health, 145);
   });
 
   it('Can add new task', function() {
     hero.addTask(hardTask);
     assert.deepStrictEqual(hero.tasks, [hardTask]);
-  })
+  });
 
   it('Can sort tasks by difficulty', function() {
     hero.addTask(hardTask);
@@ -66,7 +72,7 @@ describe('Hero tests', function() {
     hero.sortTasks('difficulty');
     expected = [hardTask, urgentTask, highRewardTask, easyTask];
     assert.deepStrictEqual(hero.tasks, expected);
-  })
+  });
 
   it('Can sort tasks by urgency', function() {
     hero.addTask(hardTask);
@@ -76,7 +82,7 @@ describe('Hero tests', function() {
     hero.sortTasks('urgency');
     expected = [urgentTask, easyTask, hardTask, highRewardTask];
     assert.deepStrictEqual(hero.tasks, expected);
-  })
+  });
 
   it('Can sort tasks by reward', function() {
     hero.addTask(hardTask);
@@ -86,7 +92,7 @@ describe('Hero tests', function() {
     hero.sortTasks('reward');
     expected = [highRewardTask, urgentTask, easyTask, hardTask];
     assert.deepStrictEqual(hero.tasks, expected);
-  })
+  });
 
   it('Can get all completed tasks', function() {
     hero.addTask(hardTask);
@@ -96,7 +102,7 @@ describe('Hero tests', function() {
     hardTask.setComplete();
     expected = [hardTask];
     assert.deepStrictEqual(hero.completeTasks(), expected);
-  })
+  });
 
   it('Can get all incomplete tasks', function() {
     hero.addTask(hardTask);
@@ -108,5 +114,6 @@ describe('Hero tests', function() {
     hardTask.setComplete();
     expected = [urgentTask];
     assert.deepStrictEqual(hero.incompleteTasks(), expected);
-  })
+  });
+
 })
