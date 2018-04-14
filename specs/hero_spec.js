@@ -20,7 +20,6 @@ describe('Hero tests', function() {
     highRewardTask = new Task(4, 1, 100);
     easyTask = new Task(1, 5, 50);
     urgentTask = new Task(5, 10, 60);
-
   });
 
   it('Has a name', function() {
