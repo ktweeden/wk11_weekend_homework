@@ -1,7 +1,7 @@
-const Hero = function(name, health, favourite_food) {
+const Hero = function(name, health, favouriteFood) {
   this.name = name;
   this.health = health;
-  this.favourite_food = favourite_food;
+  this.favouriteFood = favouriteFood;
   this.tasks = [];
 }
 
@@ -10,17 +10,17 @@ Hero.prototype.speak = function () {
 };
 
 Hero.prototype.eat = function (food) {
-  let food_value = food.replenishment_value;
+  let foodValue = food.replenishmentValue;
 
-  if(food.name === this.favourite_food && food.isPoisonous === false) {
-    food_value *= 1.5;
-    this.health += food_value;
+  if(food.name === this.favouriteFood && food.isPoisonous === false) {
+    foodValue *= 1.5;
+    this.health += foodValue;
   }
   else if(food.isPoisonous) {
-    this.health -= food_value;
+    this.health -= foodValue;
   }
   else {
-    this.health += food_value;
+    this.health += foodValue;
   }
 };
 

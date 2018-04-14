@@ -1,6 +1,6 @@
 const assert = require('assert');
 const Rat = require('../models/rat.js');
-const Food = require('../models/food.js');
+const Food = require('../models/inanimate_objects/food.js');
 
 describe('Rat test', function() {
 

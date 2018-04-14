@@ -4,7 +4,7 @@
   "description": "",
   "main": "food.js",
   "scripts": {
-    "test": "mocha specs --reporter nyan"
+    "test": "mocha specs --recursive --reporter nyan"
   },
   "keywords": [],
   "author": "",

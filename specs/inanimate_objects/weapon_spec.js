@@ -1,5 +1,5 @@
 const assert = require('assert');
-const Weapon = require('../models/weapon.js');
+const Weapon = require('../../models/inanimate_objects/weapon.js');
 
 describe('Weapon tests', function() {
   let legOfHam;

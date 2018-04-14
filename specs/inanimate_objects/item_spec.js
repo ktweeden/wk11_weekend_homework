@@ -1,5 +1,5 @@
 const assert = require('assert');
-const Item = require('../models/item.js');
+const Item = require('../../models/inanimate_objects/item.js');
 
 describe('Item tests', function() {
   let amulet

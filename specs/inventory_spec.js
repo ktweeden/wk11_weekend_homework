@@ -1,7 +1,7 @@
 const assert = require('assert');
 const Inventory = require('../models/inventory.js');
-const Food = require('../models/food.js');
-const Weapon = require('../models/weapon.js');
+const Food = require('../models/inanimate_objects/food.js');
+const Weapon = require('../models/inanimate_objects/weapon.js');
 
 describe('Inventory Tasks', function() {
   let inventory;

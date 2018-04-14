@@ -1,12 +1,12 @@
 const assert = require('assert');
 const Hero = require('../models/hero.js');
-const Food = require('../models/food.js');
+const Food = require('../models/inanimate_objects/food.js');
 const Task = require('../models/task.js');
 
 describe('Hero tests', function() {
   let hero;
   let cheese;
-  let blueberry_pie;
+  let blueberryPie;
   let hardTask;
   let highRewardTask;
   let easyTask;
@@ -15,7 +15,7 @@ describe('Hero tests', function() {
   beforeEach(function() {
     hero = new Hero('Gregor the Grotesque', 150, 'Blueberry pie')
     cheese = new Food('cheese', 5);
-    blueberry_pie = new Food('Blueberry pie', 2);
+    blueberryPie = new Food('Blueberry pie', 2);
     hardTask = new Task(20, 2, 30);
     highRewardTask = new Task(4, 1, 100);
     easyTask = new Task(1, 5, 50);
@@ -31,7 +31,7 @@ describe('Hero tests', function() {
   });
 
   it('Has a favourite food', function() {
-    assert.strictEqual(hero.favourite_food, 'Blueberry pie');
+    assert.strictEqual(hero.favouriteFood, 'Blueberry pie');
   });
 
   it('Can speak', function() {
@@ -48,7 +48,7 @@ describe('Hero tests', function() {
   });
 
   it('Can replenish health more by eating favouritefood', function() {
-    hero.eat(blueberry_pie);
+    hero.eat(blueberryPie);
     assert.strictEqual(hero.health, 153);
   });
 
